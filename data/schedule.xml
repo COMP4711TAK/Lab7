@@ -54,6 +54,34 @@ All of the courses in each day for British Columbia Institute of Technology
             </booking>
         </day>
     </days>
+    <courses>
+        <course>
+            <id>COMP4560</id>
+            <title>Computer Graphics for CST</title>
+            <instructor>Brenda Fine</instructor>
+            <booking day="Tuesday" type="lecture">
+                <time>11:30</time>
+                <room>
+                    <building>SW5</building>
+                    <room>1850</room>
+                </room>
+            </booking>
+            <booking day="Tuesday" type="lab">
+                <time>3:30</time>
+                <room>
+                    <building>SE12</building>
+                    <room>322</room>
+                </room>
+            </booking>
+            <booking day="Friday" type="lecture">
+                <time>12:30</time>
+                <room>
+                    <building>SW3</building>
+                    <room>308</room>
+                </room>
+            </booking>
+        </course>
+    </courses>
     <periods>
         <timeslot time="11:30">
             <booking course="COMP4735" type="lecture" day="Monday">
