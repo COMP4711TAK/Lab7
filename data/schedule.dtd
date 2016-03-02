@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Course schedule data for British Columbia Institute of Technology
+-->
+
+<!ELEMENT schedule (year, semester, set, program, days, periods, courses)>
+<!-- Schedule constraints -->
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT semester (#PCDATA)>
+<!ELEMENT set (#PCDATA)>
+<!ELEMENT program (#PCDATA)>
+
+<!-- Days constraints -->
+<!ELEMENT days (day+)>
+<!ELEMENT day (day_of_the_week, booking+)>
+<!ELEMENT day_of_the_week (#PCDATA)>
+<!ELEMENT booking (time, room, instructor)>
+<!ATTLIST booking course CDATA #REQUIRED type ("lecture"|"lab") #REQUIRED>
+<!ELEMENT time (start, end)>
+<!ELEMENT start (#PCDATA)>
+<!ELEMENT end (#PCDATA)>
+<!ELEMENT room (building, number)>
+<!ELEMENT building (#PCDATA)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT instructor (first_name, last_name)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+
+<!-- Periods constraints -->
+<!ELEMENT periods (period+)>
+
+<!-- Course constraints -->
+<!ELEMENT courses (course+)>
