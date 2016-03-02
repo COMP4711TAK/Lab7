@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+All of the courses in each day for British Columbia Institute of Technology
+-->
+<schedule>
+    <year>2016</year>
+    <semester>Fall</semester>
+    <set>4S</set>
+    <program>CST</program>
+    <days>
+        <day>
+            <dayoftheweek>Monday</dayoftheweek>
+            <booking course="BLAW3600" type="lecture">
+                <time>
+                    <start>9:30</start>
+                    <end>11:20</end>
+                </time>
+                <room>
+                    <building>SW3</building>
+                    <number>4785</number>
+                </room>
+                <instructor>
+                    <first_name>Catherine</first_name>
+                    <last_name>Ryan</last_name>
+                </instructor>
+            </booking>
+            <booking course="COMP4735" type="lecture">
+                <time>
+                    <start>11:30</start>
+                    <end>12:20</end>
+                </time>
+                <room>
+                    <building>SW1</building>
+                    <number>1205</number>
+                </room>
+                <instructor>
+                    <first_name>Mirela</first_name>
+                    <last_name>Gutica</last_name>
+                </instructor>
+            </booking>
+            <booking course="COMP4735" type="lab">
+                <time>
+                    <start>12:30</start>
+                    <end>2:20</end>
+                </time>
+                <room>
+                    <building>SE12</building>
+                    <number>320</number>
+                </room>
+                <instructor>
+                    <first_name>Mirela</first_name>
+                    <last_name>Gutica</last_name>
+                </instructor>
+            </booking>
+        </day>
+    </days>
+</schedule>
