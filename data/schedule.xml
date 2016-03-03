@@ -83,7 +83,7 @@ All of the courses in each day for British Columbia Institute of Technology
         </course>
     </courses>
     <periods>
-        <timeslot time="11:30">
+        <timeslot startTime="11:30">
             <booking day="Monday" course="COMP4735" type="lecture">
                 <room>
                     <building>SW1</building>
