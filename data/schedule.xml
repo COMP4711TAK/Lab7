@@ -83,8 +83,8 @@ All of the courses in each day for British Columbia Institute of Technology
         </course>
     </courses>
     <periods>
-        <timeslot time="11:30">
-            <booking course="COMP4735" type="lecture" day="Monday">
+        <timeslot startTime="11:30">
+            <booking day="Monday" course="COMP4735" type="lecture">
                 <room>
                     <building>SW1</building>
                     <number>1205</number>
@@ -94,7 +94,7 @@ All of the courses in each day for British Columbia Institute of Technology
                     <last_name>Gutica</last_name>
                 </instructor>
             </booking>
-            <booking course="COMP4560" type="lecture" day="Tuesday">
+            <booking day="Tuesday" course="COMP4560" type="lecture">
                 <room>
                     <building>SW5</building>
                     <number>1850</number>
@@ -104,7 +104,7 @@ All of the courses in each day for British Columbia Institute of Technology
                     <last_name>Fine</last_name>
                 </instructor>
             </booking>
-            <booking course="COMP4735" type="lecture" day="Thursday">
+            <booking day="Thursday" course="COMP4735" type="lecture">
                 <room>
                     <building>SW3</building>
                     <number>1710</number>
