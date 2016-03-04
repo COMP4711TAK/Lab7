@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE schedule SYSTEM 'schedule.dtd'>
 <!--
 All of the courses in each day for British Columbia Institute of Technology
 -->
@@ -10,11 +11,7 @@ All of the courses in each day for British Columbia Institute of Technology
     <days>
         <day>
             <day_of_the_week>Monday</day_of_the_week>
-            <booking course="BLAW3600" type="lecture">
-                <time>
-                    <start>9:30</start>
-                    <end>11:20</end>
-                </time>
+            <booking time="9:30" course="BLAW3600" type="lecture">
                 <room>
                     <building>SW3</building>
                     <number>4785</number>
@@ -24,11 +21,7 @@ All of the courses in each day for British Columbia Institute of Technology
                     <last_name>Ryan</last_name>
                 </instructor>
             </booking>
-            <booking course="COMP4735" type="lecture">
-                <time>
-                    <start>11:30</start>
-                    <end>12:20</end>
-                </time>
+            <booking time="10:30" course="COMP4735" type="lecture">
                 <room>
                     <building>SW1</building>
                     <number>1205</number>
@@ -38,11 +31,7 @@ All of the courses in each day for British Columbia Institute of Technology
                     <last_name>Gutica</last_name>
                 </instructor>
             </booking>
-            <booking course="COMP4735" type="lab">
-                <time>
-                    <start>12:30</start>
-                    <end>2:20</end>
-                </time>
+            <booking time="12:30" course="COMP4735" type="lab">
                 <room>
                     <building>SE12</building>
                     <number>320</number>
@@ -54,34 +43,6 @@ All of the courses in each day for British Columbia Institute of Technology
             </booking>
         </day>
     </days>
-    <courses>
-        <course>
-            <id>COMP4560</id>
-            <title>Computer Graphics for CST</title>
-            <instructor>Brenda Fine</instructor>
-            <booking day="Tuesday" type="lecture">
-                <time>11:30</time>
-                <room>
-                    <building>SW5</building>
-                    <room>1850</room>
-                </room>
-            </booking>
-            <booking day="Tuesday" type="lab">
-                <time>3:30</time>
-                <room>
-                    <building>SE12</building>
-                    <room>322</room>
-                </room>
-            </booking>
-            <booking day="Friday" type="lecture">
-                <time>12:30</time>
-                <room>
-                    <building>SW3</building>
-                    <room>308</room>
-                </room>
-            </booking>
-        </course>
-    </courses>
     <periods>
         <timeslot startTime="11:30">
             <booking day="Monday" course="COMP4735" type="lecture">
@@ -116,4 +77,32 @@ All of the courses in each day for British Columbia Institute of Technology
             </booking>
         </timeslot>
     </periods>
+    <courses>
+        <course>
+            <id>COMP4560</id>
+            <title>Computer Graphics for CST</title>
+            <instructor>
+                <first_name>Brenda</first_name>
+                <last_name>Fine</last_name>
+            </instructor>
+            <booking time="11:30" day="Tuesday" type="lecture">
+                <room>
+                    <building>SW5</building>
+                    <number>1850</number>
+                </room>
+            </booking>
+            <booking time="3:30" day="Tuesday" type="lab">
+                <room>
+                    <building>SE12</building>
+                    <number>322</number>
+                </room>
+            </booking>
+            <booking time="12:30" day="Friday" type="lecture">
+                <room>
+                    <building>SW3</building>
+                    <number>308</number>
+                </room>
+            </booking>
+        </course>
+    </courses>
 </schedule>
