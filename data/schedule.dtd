@@ -3,8 +3,8 @@
 Course schedule data for British Columbia Institute of Technology
 -->
 
-<!ELEMENT schedule (year, semester, set, program, days, periods, courses)>
 <!-- Schedule constraints -->
+<!ELEMENT schedule (year, semester, set, program, days, periods, courses)>
 <!ELEMENT year (#PCDATA)>
 <!ELEMENT semester (#PCDATA)>
 <!ELEMENT set (#PCDATA)>
@@ -14,24 +14,31 @@ Course schedule data for British Columbia Institute of Technology
 <!ELEMENT days (day+)>
 <!ELEMENT day (day_of_the_week, booking+)>
 <!ELEMENT day_of_the_week (#PCDATA)>
-<!ELEMENT booking (day?, time?, room, instructor)>
-<!ATTLIST booking course CDATA #REQUIRED type ("lecture"|"lab") #REQUIRED>
-<!ELEMENT time (start, end)>
-<!ELEMENT start (#PCDATA)>
-<!ELEMENT end (#PCDATA)>
-<!ELEMENT room (building, number)>
-<!ELEMENT building (#PCDATA)>
-<!ELEMENT number (#PCDATA)>
-<!ELEMENT instructor (first_name, last_name)>
-<!ELEMENT first_name (#PCDATA)>
-<!ELEMENT last_name (#PCDATA)>
 
 <!-- Periods constraints -->
 <!ELEMENT periods (timeslot+)>
 <!ELEMENT timeslot (booking+)>
-<!ATTLIST timeslot startTime
-        (8:30|9:30|10:30|11:30|12:30|1:30|2:30|3:30|4:30|5:30) #REQUIRED
+<!ATTLIST timeslot 
+        startTime (8:30|9:30|10:30|11:30|12:30|1:30|2:30|3:30|4:30) #REQUIRED
         >
 
-<!-- Course constraints -->
+<!-- Courses constraints -->
 <!ELEMENT courses (course+)>
+<!ELEMENT course (id, title, instructor, booking+)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT instructor (first_name, last_name)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+
+<!-- Booking constraints -->
+<!ELEMENT booking (room, instructor?)>
+<!ELEMENT room (building, number)>
+<!ELEMENT building (#PCDATA)>
+<!ELEMENT number (#PCDATA)>
+<!ATTLIST booking
+        type (lecture|lab) #REQUIRED
+        course (BLAW3600|COMP4735|COMP4977|COMP4560|COMP4711|COMP4976) #IMPLIED
+        day (Monday|Tuesday|Wednesday|Thursday|Friday) #IMPLIED
+        time (8:30|9:30|10:30|11:30|12:30|1:30|2:30|3:30|4:30) #IMPLIED
+	>
