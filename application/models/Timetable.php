@@ -24,6 +24,29 @@ class Timetable extends CI_Model {
     }
 }
 
-public class Booking extends CI_Model {
+class Booking extends CI_Model {
+    public $type       = '';
+    public $day        = null;
+    public $course     = null;
+    public $time       = null;
+    public $first_name = null;
+    public $last_name  = null;
+    public $room       = '';
+    public $building   = '';
+    public $number     = '';
+
+    function __construct($booking) {
+        parent::__construct();
+
+        $this->type       = $booking['type'];
+        $this->day        = $booking['day'];
+        $this->course     = $booking["course"];
+        $this->time       = $booking["time"];
+        $this->first_name = $booking->instructor->first_name;
+        $this->last_name  = $booking->instructor->last_name;
+        $this->building   = $booking->room->building;
+        $this->number     = $booking->room->number;
+
+    }
 
 }
