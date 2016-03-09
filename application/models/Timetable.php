@@ -38,14 +38,14 @@ class Booking extends CI_Model {
     function __construct($booking) {
         parent::__construct();
 
-        $this->type       = $booking['type'];
-        $this->day        = $booking['day'];
-        $this->course     = $booking["course"];
-        $this->time       = $booking["time"];
-        $this->first_name = $booking->instructor->first_name;
-        $this->last_name  = $booking->instructor->last_name;
-        $this->building   = $booking->room->building;
-        $this->number     = $booking->room->number;
+        $this->type       = (string) $booking['type'];
+        $this->day        = (string) $booking['day'];
+        $this->course     = (string) $booking["course"];
+        $this->time       = (string) $booking["time"];
+        $this->first_name = (string) $booking->instructor->first_name;
+        $this->last_name  = (string) $booking->instructor->last_name;
+        $this->building   = (string) $booking->room->building;
+        $this->number     = (string) $booking->room->number;
 
     }
 
