@@ -9,18 +9,57 @@ class Timetable extends CI_Model {
     function __construct() {
         parent::__construct();
 
-        $this->xml = simplexml_load_file('/data/schedule.xml');
+        $this->xml = simplexml_load_file('data/schedule.xml');
 
         foreach ($this->xml->days->day as $day) {
             $record = new stdClass();
 
             $record->day_of_the_week = (string) $day->day_of_the_week;
-            $record->booking         = array();
+            $record->bookings         = array();
 
             foreach ($day->booking as $booking) {
-                array_push($record->booking, new Booking($booking));
+                array_push($record->bookings, new Booking($booking));
             }
+            array_push($this->days, $record);
         }
+
+        foreach ($this->xml->courses->course as $course) {
+            $record = new stdClass();
+
+            $record->id     = (string) $course->id;
+            $record->title  = (string) $course->title;
+            $record->bookings = array();
+
+            foreach ($course->booking as $booking) {
+                array_push($record->bookings, new Booking($booking));
+            }
+            array_push($this->courses, $record);
+        }
+
+        foreach ($this->xml->periods->timeslot as $timeslot) {
+            $record = new stdClass();
+
+            $record->startTime     = (string) $timeslot['startTime'];
+            $record->bookings = array();
+
+            foreach ($timeslot->booking as $booking) {
+                array_push($record->bookings, new Booking($booking));
+            }
+            array_push($this->periods, $record);
+        }
+        return $this->days;
+    }
+    
+    function getDays() {
+        return $this->days;
+    }
+    
+    function getPeriods() {
+        return $this->periods;
+    }
+    
+    function getCourses() {
+        return $this->courses;
     }
 }
 
