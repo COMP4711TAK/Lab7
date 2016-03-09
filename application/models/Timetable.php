@@ -78,11 +78,11 @@ class Booking extends CI_Model {
         parent::__construct();
 
         $this->type       = (string) $booking['type'];
-        $this->day        = (string) $booking['day'];
-        $this->course     = (string) $booking["course"];
-        $this->time       = (string) $booking["time"];
-        $this->first_name = (string) $booking->instructor->first_name;
-        $this->last_name  = (string) $booking->instructor->last_name;
+        $this->day        = (isset($booking['day'])) ? (string) $booking['day'] : null;
+        $this->course     = (isset($booking['course'])) ? (string) $booking["course"] : null;
+        $this->time       = (isset($booking['time'])) ? (string) $booking["time"] : null;
+        $this->first_name = (isset($booking->first_name)) ? (string) $booking->instructor->first_name : null;
+        $this->last_name  = (isset($booking->last_name)) ? (string) $booking->instructor->last_name : null;
         $this->building   = (string) $booking->room->building;
         $this->number     = (string) $booking->room->number;
 
