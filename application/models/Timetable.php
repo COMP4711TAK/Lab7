@@ -26,9 +26,11 @@ class Timetable extends CI_Model {
         foreach ($this->xml->courses->course as $course) {
             $record = new stdClass();
 
-            $record->id     = (string) $course->id;
-            $record->title  = (string) $course->title;
-            $record->bookings = array();
+            $record->id         = (string) $course->id;
+            $record->title      = (string) $course->title;
+            $record->first_name = (string) $course->instructor->first_name;
+            $record->last_name  = (string) $course->instructor->last_name;
+            $record->bookings   = array();
 
             foreach ($course->booking as $booking) {
                 array_push($record->bookings, new Booking($booking));
@@ -70,7 +72,6 @@ class Booking extends CI_Model {
     public $time       = null;
     public $first_name = null;
     public $last_name  = null;
-    public $room       = '';
     public $building   = '';
     public $number     = '';
 
