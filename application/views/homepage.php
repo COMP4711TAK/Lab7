@@ -110,4 +110,11 @@
             </div>
         </form>
     </div>
+    <div class="col-md-6">
+        <h3>{error}</h3>
+    </div>
+    <div class="col-md-6">
+        <h3>{bingo}</h3>
+        <p>{results}</p>
+    </div>
 </div>
