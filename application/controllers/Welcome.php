@@ -54,15 +54,15 @@ class Welcome extends Application {
         $this->data['pageTitle'] = "Homepage";
         $this->data['pagebody']  = "homepage";
         if (count($days) != 1) {
-            $this->data['error'] = "ERROR:" ."<br/>" . "By Days has more/less bookings returned than 1";
+            $this->data['error'] = "ERROR: By Days has more/less bookings returned than 1";
             $error = true;
         }
         if (count($periods) != 1) {
-            $this->data['error'] = "ERROR:" ."<br/>" . "By Periods has more/less bookings returned than 1";
+            $this->data['error'] = "ERROR: By Periods has more/less bookings returned than 1";
             $error = true;
         }
         if (count($courses) != 1) {
-            $this->data['error'] = "ERROR:" ."<br/>" . "By Courses has more/less bookings returned than 1";
+            $this->data['error'] = "ERROR: By Courses has more/less bookings returned than 1";
             $error = true;
         }
 
@@ -85,7 +85,7 @@ class Welcome extends Application {
             }
             $check = array_filter(array_unique($check));
             if(count($check) != 8 || count($result) != 8) {
-                $this->data['error'] = "ERROR:" ."<br/>" . "All three bookings returned are not the same";
+                $this->data['error'] = "ERROR: All three bookings returned are not the same";
                 $error = true;
             }
         }
@@ -98,13 +98,13 @@ class Welcome extends Application {
         } else {
             $this->data['error']   = "";
             $this->data['bingo']   = "Bingo";
-            $this->data['results'] = "Day: " . $result['day'] . "<br/>"
-                                     . "Time: " . $result['time'] . "<br/>"
-                                     . "Type: " . $result['type'] . "<br/>"
-                                     . "Course: " . $result['course'] . "<br/>"
-                                     . "Instructor: " . $result['first_name']  . " " . $result['last_name'] . "<br/>"
-                                     . "Building: " . $result['building'] . "<br/>"
-                                     . "Room: " . $result['number'];
+            $this->data['results'] = "Day: " . $result['day']
+                                     . " Time: " . $result['time']
+                                     . " Type: " . $result['type']
+                                     . " Course: " . $result['course']
+                                     . " Instructor: " . $result['first_name']  . " " . $result['last_name']
+                                     . " Building: " . $result['building']
+                                     . " Room: " . $result['number'];
             $this->render();
         }
     }

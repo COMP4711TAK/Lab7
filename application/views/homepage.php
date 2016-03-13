@@ -90,8 +90,8 @@
     </div>
     <div class="col-md-6">
         <h3>Search</h3>
-        <?php echo form_open('welcome/search'); ?>
-            <div class="panel panel-primary">
+        <form action="/welcome/search" method="post" accept-charset="utf-8">
+        <div class="panel panel-primary">
                 <table class="table">
                     <tr>
                         <th>Day:</th>
