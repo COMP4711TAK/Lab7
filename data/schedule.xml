@@ -21,7 +21,7 @@ All of the courses in each day for British Columbia Institute of Technology
                     <last_name>Ryan</last_name>
                 </instructor>
             </booking>
-            <booking time="10:30" course="COMP4735" type="lecture">
+            <booking time="11:30" course="COMP4735" type="lecture">
                 <room>
                     <building>SW1</building>
                     <number>1205</number>
@@ -101,6 +101,38 @@ All of the courses in each day for British Columbia Institute of Technology
                 <room>
                     <building>SW3</building>
                     <number>308</number>
+                </room>
+            </booking>
+        </course>
+        <course>
+            <id>COMP4735</id>
+            <title>Operating Systems</title>
+            <instructor>
+                <first_name>Mirela</first_name>
+                <last_name>Gutica</last_name>
+            </instructor>
+            <booking time="11:30" day="Monday" type="lecture">
+                <room>
+                    <building>SW1</building>
+                    <number>1205</number>
+                </room>
+            </booking>
+            <booking time="12:30" day="Monday" type="lab">
+                <room>
+                    <building>SE12</building>
+                    <number>320</number>
+                </room>
+            </booking>
+            <booking time="1:30" day="Wednesday" type="lecture">
+                <room>
+                    <building>SW1</building>
+                    <number>1205</number>
+                </room>
+            </booking>
+            <booking time="11:30" day="Thursday" type="lecture">
+                <room>
+                    <building>SW3</building>
+                    <number>1710</number>
                 </room>
             </booking>
         </course>

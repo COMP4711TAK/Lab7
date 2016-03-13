@@ -63,6 +63,68 @@ class Timetable extends CI_Model {
     function getCourses() {
         return $this->courses;
     }
+
+    function getWeekDays() {
+        return array
+           ("Monday"    => "Monday",
+            "Tuesday"   => "Tuesday",
+            "Wednesday" => "Wednesday",
+            "Thursday"  => "Thursday",
+            "Friday"    => "Friday");
+    }
+
+    function getTimeslots() {
+        return array
+           ("8:30"   => "8:30",
+            "9:30"   => "9:30",
+            "10:30"  => "10:30",
+            "11:30"  => "11:30",
+            "12:30"  => "2:30",
+            "1:30"   => "1:30",
+            "2:30"   => "2:30",
+            "3:30"   => "3:30",
+            "4:30"   => "4:30");
+    }
+
+    function getBookingsFromDays($day, $time) {
+        $results = array();
+        foreach($this->days as $weekDay){
+            if($weekDay->day_of_the_week == $day) {
+                foreach($weekDay->bookings as $booking) {
+                    if ($booking->time == $time) {
+                        array_push($results, $booking);
+                    }
+                }
+            }
+        }
+        return $results;
+    }
+
+    function getBookingsFromPeriods($day, $time) {
+        $results = array();
+        foreach($this->periods as $timeslot) {
+            if($timeslot->startTime) {
+                foreach ($timeslot->bookings as $booking) {
+                    if ($booking->day == $day) {
+                        array_push($results, $booking);
+                    }
+                }
+            }
+        }
+        return $results;
+    }
+
+    function getBookingsFromCourses($day, $time) {
+        $results = array();
+        foreach($this->courses as $course) {
+            foreach ($course->bookings as $booking) {
+                if ($booking->day == $day && $booking->time == $time) {
+                    array_push($results, $booking);
+                }
+            }
+        }
+        return $results;
+    }
 }
 
 class Booking extends CI_Model {
@@ -82,8 +144,8 @@ class Booking extends CI_Model {
         $this->day        = (isset($booking['day'])) ? (string) $booking['day'] : null;
         $this->course     = (isset($booking['course'])) ? (string) $booking["course"] : null;
         $this->time       = (isset($booking['time'])) ? (string) $booking["time"] : null;
-        $this->first_name = (isset($booking->first_name)) ? (string) $booking->instructor->first_name : null;
-        $this->last_name  = (isset($booking->last_name)) ? (string) $booking->instructor->last_name : null;
+        $this->first_name = (isset($booking->instructor->first_name)) ? (string) $booking->instructor->first_name : null;
+        $this->last_name  = (isset($booking->instructor->last_name)) ? (string) $booking->instructor->last_name : null;
         $this->building   = (string) $booking->room->building;
         $this->number     = (string) $booking->room->number;
 
