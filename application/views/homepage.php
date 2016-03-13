@@ -88,4 +88,26 @@
         </div>
         {/courses}
     </div>
+    <div class="col-md-6">
+        <h3>Search</h3>
+        <?php echo form_open('welcome/search'); ?>
+            <div class="panel panel-primary">
+                <table class="table">
+                    <tr>
+                        <th>Day:</th>
+                        <td>{dayDDL}</td>
+                    </tr>
+                    <tr>
+                        <th>Time:</th>
+                        <td>{timeDDL}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit" value="Search" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
 </div>
